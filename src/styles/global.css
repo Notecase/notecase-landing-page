@@ -10,12 +10,13 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip; /* Use clip instead of hidden to prevent scroll calculation issues */
 }
 
 body {
   font-family: 'IBM Plex Sans', -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* Cosmic Background */
@@ -24,6 +25,7 @@ body {
   inset: 0;
   pointer-events: none;
   z-index: 0;
+  overflow: hidden;
 }
 
 .stars-layer {
@@ -1146,212 +1148,20 @@ body {
   margin-top: 8px;
 }
 
-/* Pricing */
-.pricing-section {
+/* Waitlist */
+.waitlist-section {
   padding: 120px 48px;
   position: relative;
 }
 
-.billing-toggle {
+.waitlist-cta {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 16px;
-  margin-bottom: 48px;
-  font-family: 'Space Mono', monospace;
-  font-size: 14px;
+  margin-top: 48px;
 }
 
-.toggle-switch {
-  width: 56px;
-  height: 28px;
-  border-radius: 100px;
-  border: 1px solid;
-  cursor: pointer;
-  position: relative;
-  transition: all 0.3s;
-  background: transparent;
-}
-
-.toggle-knob {
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  transition: all 0.3s;
-}
-
-.toggle-knob.yearly {
-  left: calc(100% - 23px);
-}
-
-.save-badge {
-  margin-left: 8px;
-  padding: 4px 10px;
-  border-radius: 100px;
-  font-size: 11px;
-  font-weight: 600;
-}
-
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-bottom: 48px;
-}
-
-.pricing-card {
-  padding: 32px;
-  border-radius: 20px;
-  border: 2px solid;
-  position: relative;
-  transition: all 0.3s;
-  text-align: center;
-}
-
-.pricing-card:hover {
-  transform: translateY(-8px);
-}
-
-.pricing-card.popular {
-  transform: scale(1.05);
-}
-
-.pricing-card.popular:hover {
-  transform: scale(1.05) translateY(-8px);
-}
-
-.popular-badge {
-  position: absolute;
-  top: -14px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 8px 20px;
-  border-radius: 100px;
-  font-size: 12px;
-  font-family: 'Space Mono', monospace;
-  font-weight: 600;
-}
-
-.plan-icon {
-  font-size: 36px;
-  margin-bottom: 16px;
-}
-
-.plan-name {
-  font-family: 'Space Mono', monospace;
-  font-size: 24px;
-  font-weight: 700;
-  margin: 0 0 8px;
-}
-
-.plan-tagline {
-  font-size: 14px;
-  margin: 0 0 24px;
-}
-
-.plan-price {
-  margin-bottom: 24px;
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 2px;
-}
-
-.price-currency {
-  font-size: 20px;
-}
-
-.price-amount {
-  font-family: 'Space Mono', monospace;
-  font-size: 56px;
-  font-weight: 700;
-  line-height: 1;
-}
-
-.price-period {
-  font-size: 16px;
-}
-
-.plan-features {
-  list-style: none;
-  margin: 0 0 32px;
-  text-align: left;
-}
-
-.plan-features li {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  font-size: 14px;
-  line-height: 1.5;
-  margin-bottom: 12px;
-}
-
-.feature-check {
-  font-weight: bold;
-  flex-shrink: 0;
-}
-
-.plan-cta {
-  width: 100%;
-  padding: 16px 24px;
-  font-size: 14px;
-  font-family: 'Space Mono', monospace;
-  font-weight: 600;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.plan-cta.primary {
-  border: none;
-}
-
-.plan-cta.primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
-}
-
-.plan-cta.secondary {
-  background: transparent;
-  border: 1px solid;
-}
-
-.plan-cta.secondary:hover {
-  background: rgba(128, 128, 128, 0.1);
-}
-
-.enterprise-banner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 32px 40px;
-  border-radius: 20px;
-  border: 1px solid;
-}
-
-.enterprise-content {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.enterprise-icon {
-  font-size: 36px;
-}
-
-.enterprise-content h4 {
-  font-family: 'Space Mono', monospace;
-  font-size: 18px;
-  margin: 0 0 4px;
-}
-
-.enterprise-content p {
-  font-size: 14px;
-  margin: 0;
+.waitlist-btn {
+  text-decoration: none;
 }
 
 /* CTA */
@@ -1551,17 +1361,6 @@ body {
     gap: 48px;
   }
 
-  .pricing-grid {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .pricing-card.popular {
-    transform: none;
-  }
-
   .app-sidebar {
     display: none;
   }
@@ -1580,7 +1379,7 @@ body {
   .demo-section,
   .features-section,
   .modes-section,
-  .pricing-section,
+  .waitlist-section,
   .cta-section {
     padding-left: 24px;
     padding-right: 24px;
@@ -1609,16 +1408,6 @@ body {
   .hero-metrics {
     flex-wrap: wrap;
     gap: 16px;
-  }
-
-  .enterprise-banner {
-    flex-direction: column;
-    gap: 24px;
-    text-align: center;
-  }
-
-  .enterprise-content {
-    flex-direction: column;
   }
 
   .footer {

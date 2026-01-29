@@ -21,7 +21,7 @@ export const Nav = memo(({ theme, setTheme, c, isScrolled }: NavProps) => (
         <div className="nav-links">
             <a href="#journey" style={{ color: c.moonlight }}>journey</a>
             <a href="#demo" style={{ color: c.moonlight }}>demo</a>
-            <a href="#pricing" style={{ color: c.moonlight }}>pricing</a>
+            <a href="#waitlist" style={{ color: c.moonlight }}>waitlist</a>
 
             <button
                 className="theme-toggle"

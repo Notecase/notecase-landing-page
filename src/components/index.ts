@@ -6,6 +6,6 @@ export { StickyFeatures } from './StickyFeatures';
 export { InteractiveDemo } from './InteractiveDemo';
 export { FeatureTriangle } from './FeatureTriangle';
 export { LearningModes } from './LearningModes';
-export { Pricing } from './Pricing';
+export { Waitlist } from './Waitlist';
 export { FinalCTA } from './FinalCTA';
 export { Footer } from './Footer';

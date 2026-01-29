@@ -125,7 +125,7 @@ export const InteractiveDemo = memo(({ c, isDark }: InteractiveDemoProps) => {
     useEffect(() => {
         const container = containerRef.current;
         if (container) {
-            container.focus();
+            container.focus({ preventScroll: true });
         }
     }, []);
 

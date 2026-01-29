@@ -9,7 +9,7 @@ import {
   InteractiveDemo,
   FeatureTriangle,
   LearningModes,
-  Pricing,
+  Waitlist,
   FinalCTA,
   Footer,
 } from './components';
@@ -52,7 +52,7 @@ function App() {
       <InteractiveDemo c={c} isDark={isDark} />
       <FeatureTriangle c={c} isDark={isDark} />
       <LearningModes c={c} isDark={isDark} />
-      <Pricing c={c} isDark={isDark} />
+      <Waitlist c={c} isDark={isDark} />
       <FinalCTA c={c} isDark={isDark} />
       <Footer c={c} />
     </div>

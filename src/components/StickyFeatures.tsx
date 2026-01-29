@@ -45,16 +45,24 @@ export const StickyFeatures = memo(({ c, isDark }: StickyFeaturesProps) => {
         const handleScroll = () => {
             if (!sectionRef.current) return;
             const section = sectionRef.current;
-            const rect = section.getBoundingClientRect();
+            const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
             const viewportHeight = window.innerHeight;
-            const scrolled = -rect.top;
+            const scrollY = window.scrollY;
+
+            // Calculate how far we've scrolled into the section
+            const scrolledIntoSection = scrollY - sectionTop;
+            // Total scrollable distance within the section
             const totalScroll = sectionHeight - viewportHeight;
-            const progress = Math.max(0, Math.min(1, scrolled / totalScroll));
+
+            // Progress from 0 to 1 as we scroll through the section
+            const progress = Math.max(0, Math.min(1, scrolledIntoSection / totalScroll));
             const featureIndex = Math.min(features.length - 1, Math.floor(progress * features.length));
+
             setActiveIndex(featureIndex);
         };
 
+        handleScroll(); // Call immediately on mount
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
