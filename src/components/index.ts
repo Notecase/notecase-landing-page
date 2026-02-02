@@ -9,3 +9,5 @@ export { LearningModes } from './LearningModes';
 export { Waitlist } from './Waitlist';
 export { FinalCTA } from './FinalCTA';
 export { Footer } from './Footer';
+export { Layout } from './Layout';
+export { ScrollToHash } from './ScrollToHash';
