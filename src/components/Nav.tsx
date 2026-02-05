@@ -34,7 +34,7 @@ export const Nav = memo(({ theme, setTheme, c, isScrolled }: NavProps) => {
         }}>
             <Link to="/" className="nav-logo" style={{ color: c.starlight, textDecoration: 'none' }}>
                 <span className="logo-icon" style={{ color: c.solarFlare }}>&#x25C9;</span>
-                notecase
+                Noteshell
             </Link>
 
             <div className="nav-links">

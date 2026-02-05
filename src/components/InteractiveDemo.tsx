@@ -20,7 +20,7 @@ const steps = [
     {
         id: 'capture',
         title: 'Capture',
-        subtitle: 'Notecase saves the moment',
+        subtitle: 'Noteshell saves the moment',
         processing: 'Creating new note...',
         result: 'Note created: "Quantum Entanglement"',
         resultIcon: '📝',
@@ -139,7 +139,7 @@ export const InteractiveDemo = memo(({ c, isDark }: InteractiveDemoProps) => {
                     <span className="section-tag" style={{ color: c.solarFlare }}>◉ EXPERIENCE THE JOURNEY</span>
                     <h2 style={{ color: c.starlight }}>From curiosity to creation</h2>
                     <p style={{ color: c.moonlight }}>
-                        See how Notecase transforms a simple question into structured knowledge.
+                        See how Noteshell transforms a simple question into structured knowledge.
                         <br />
                         <span style={{ color: c.distant, fontSize: '14px' }}>Click or press Enter to interact</span>
                     </p>
@@ -179,7 +179,7 @@ export const InteractiveDemo = memo(({ c, isDark }: InteractiveDemoProps) => {
                             }}>
                                 <span className="url-lock" style={{ color: isDark ? '#86868b' : '#86868b' }}>🔒</span>
                                 <span className="url-text" style={{ color: isDark ? '#f5f5f7' : '#1d1d1f' }}>
-                                    app.notecase.ai
+                                    app.noteshell.ai
                                 </span>
                             </div>
                         </div>
@@ -196,7 +196,7 @@ export const InteractiveDemo = memo(({ c, isDark }: InteractiveDemoProps) => {
                         <div className="app-sidebar" style={{ backgroundColor: c.nebula, borderRightColor: c.border }}>
                             <div className="sidebar-header">
                                 <span className="sidebar-logo" style={{ color: c.solarFlare }}>◉</span>
-                                <span style={{ color: c.starlight, fontWeight: 600 }}>notecase</span>
+                                <span style={{ color: c.starlight, fontWeight: 600 }}>Noteshell</span>
                             </div>
                             <div className="sidebar-nav">
                                 {['Home', 'Notes', 'Explore', 'Flashcards'].map((item, i) => (

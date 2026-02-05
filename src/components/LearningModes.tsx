@@ -27,7 +27,7 @@ export const LearningModes = memo(({ c, isDark }: LearningModesProps) => {
                 <div className="section-header">
                     <span className="section-tag" style={{ color: c.solarFlare }}>◉ ADAPTIVE LEARNING</span>
                     <h2 style={{ color: c.starlight }}>A thousand ways to learn</h2>
-                    <p style={{ color: c.moonlight }}>Notecase adapts the outputs to how you learn best.</p>
+                    <p style={{ color: c.moonlight }}>Noteshell adapts the outputs to how you learn best.</p>
                 </div>
 
                 <div className="modes-grid">

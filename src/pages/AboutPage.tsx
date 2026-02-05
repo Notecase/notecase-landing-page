@@ -50,9 +50,8 @@ export function AboutPage() {
           </h1>
 
           <p className="about-subtitle" style={{ color: c.moonlight }}>
-            We started NoteCase because we believe the best ideas emerge when
-            curiosity has no friction. Our mission is to build the fastest,
-            most intuitive thinking tool on the planet.
+            We started NoteCase because the best ideas show up when curiosity flows. 
+            Our mission is to build the fastest, most intuitive tool for thinking and learning.
           </p>
         </div>
       </section>
@@ -63,9 +62,7 @@ export function AboutPage() {
           <div className="mission-divider" style={{ backgroundColor: c.solarFlare }} />
 
           <blockquote className="mission-quote" style={{ color: c.starlight }}>
-            "We envision a world where every curious mind has a personal
-            thinking partner — one that remembers everything, connects ideas
-            effortlessly, and never gets in the way."
+            "We imagine learning with a partner that never forgets, always connects the dots, and quietly keeps you moving forward."
           </blockquote>
 
           <p className="mission-body" style={{ color: c.moonlight }}>

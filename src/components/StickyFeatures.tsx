@@ -12,7 +12,7 @@ const features = [
         number: '01',
         label: 'ACCELERATE',
         title: 'Turn learning into your fastest task',
-        description: 'For too long, learning felt like work—searching, sketching, digesting, revising. Notecase automates the heavy lifting so learning feels natural and enjoyable.',
+        description: 'For too long, learning felt like work—searching, sketching, digesting, revising. Noteshell automates the heavy lifting so learning feels natural and enjoyable.',
         metric: '60→10',
         metricUnit: 'min',
         metricLabel: 'Turn an hour of scattered learning into 10 minutes of structured clarity.',

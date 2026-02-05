@@ -21,7 +21,7 @@ export const Waitlist = memo(({ c, isDark }: WaitlistProps) => (
                 <span className="section-tag" style={{ color: c.solarFlare }}>◉ EARLY ACCESS</span>
                 <h2 style={{ color: c.starlight }}>Be the first to explore</h2>
                 <p style={{ color: c.moonlight }}>
-                    NoteCase is launching soon. Join the waitlist to get early access and
+                    Noteshell is launching soon. Join the waitlist to get early access and
                     help shape the future of learning.
                 </p>
             </div>

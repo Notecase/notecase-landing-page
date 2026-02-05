@@ -25,7 +25,7 @@ export const Hero = memo(({ c, isDark }: HeroProps) => (
             </h1>
 
             <p className="hero-subheadline" style={{ color: c.moonlight }}>
-                Let Notecase build your learning path.
+                Let Noteshell build your learning path.
             </p>
 
             <p className="hero-description" style={{ color: c.distant }}>
