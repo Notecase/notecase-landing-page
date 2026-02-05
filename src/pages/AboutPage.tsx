@@ -22,7 +22,7 @@ export function AboutPage() {
       icon: '\u221E',
       title: 'Boundless depth',
       description:
-        'Surface-level knowledge fades. NoteCase helps you build layered understanding that compounds over time.',
+        'Surface-level knowledge fades. Noteshell helps you build layered understanding that compounds over time.',
     },
   ];
 
@@ -50,7 +50,7 @@ export function AboutPage() {
           </h1>
 
           <p className="about-subtitle" style={{ color: c.moonlight }}>
-            We started NoteCase because the best ideas show up when curiosity flows. 
+            We started Noteshell because the best ideas show up when curiosity flows. 
             Our mission is to build the fastest, most intuitive tool for thinking and learning.
           </p>
         </div>
@@ -67,7 +67,7 @@ export function AboutPage() {
 
           <p className="mission-body" style={{ color: c.moonlight }}>
             Traditional note-taking tools treat knowledge like static files.
-            NoteCase treats it like a living constellation — each idea a star,
+            Noteshell treats it like a living constellation — each idea a star,
             every connection a line of light. We are building software that
             thinks alongside you, so you can spend less time organizing and
             more time understanding.
@@ -121,7 +121,7 @@ export function AboutPage() {
             Ready to think <em style={{ color: c.solarFlare }}>differently</em>?
           </h2>
           <p style={{ color: c.moonlight }}>
-            NoteCase is currently in early access. Sign up to be among the
+            Noteshell is currently in early access. Sign up to be among the
             first to experience a new way of learning.
           </p>
           <div className="cta-buttons">

@@ -10,7 +10,7 @@ export const Footer = memo(({ c }: FooterProps) => (
     <footer className="footer" style={{ borderTopColor: c.border, backgroundColor: c.nebula }}>
         <div className="footer-brand">
             <span className="footer-logo" style={{ color: c.starlight }}>
-                <span style={{ color: c.solarFlare }}>&#x25C9;</span> notecase
+                <span style={{ color: c.solarFlare }}>&#x25C9;</span> Noteshell
             </span>
             <span className="footer-tagline" style={{ color: c.distant }}>Follow curiosity.</span>
         </div>
@@ -20,7 +20,7 @@ export const Footer = memo(({ c }: FooterProps) => (
                 <a key={link} href="#" style={{ color: c.distant }}>{link}</a>
             ))}
         </div>
-        <div className="footer-copyright" style={{ color: c.distant }}>&copy; 2025 Notecase</div>
+        <div className="footer-copyright" style={{ color: c.distant }}>&copy; 2025 Noteshell</div>
     </footer>
 ));
 
