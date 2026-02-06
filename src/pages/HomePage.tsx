@@ -6,6 +6,7 @@ import {
   InteractiveDemo,
   FeatureTriangle,
   LearningModes,
+  ComparisonTable,
   Waitlist,
   FinalCTA,
 } from '../components';
@@ -20,6 +21,7 @@ export function HomePage() {
       <InteractiveDemo c={c} isDark={isDark} />
       <FeatureTriangle c={c} isDark={isDark} />
       <LearningModes c={c} isDark={isDark} />
+      <ComparisonTable />
       <Waitlist c={c} isDark={isDark} />
       <FinalCTA c={c} isDark={isDark} />
     </>
