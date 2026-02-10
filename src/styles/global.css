@@ -412,6 +412,22 @@ body {
   z-index: 1;
 }
 
+.feature-content-wrapper {
+  position: relative;
+}
+
+.feature-content-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity 0.15s ease;
+}
+
+.feature-content-item:first-child {
+  position: relative;
+}
+
 .feature-header {
   display: flex;
   align-items: center;

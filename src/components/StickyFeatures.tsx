@@ -16,6 +16,8 @@ const features = [
         metric: '60→10',
         metricUnit: 'min',
         metricLabel: 'Turn an hour of scattered learning into 10 minutes of structured clarity.',
+        icon: '⚡',
+        frameText: 'Acceleration in progress',
     },
     {
         number: '02',
@@ -25,6 +27,8 @@ const features = [
         metric: '<3',
         metricUnit: 'sec',
         metricLabel: 'From thought to structured note in the blink of an eye.',
+        icon: '✦',
+        frameText: 'Capturing spark',
     },
     {
         number: '03',
@@ -34,11 +38,19 @@ const features = [
         metric: '∞',
         metricUnit: 'depth',
         metricLabel: 'No ceiling on how deep you can go. The agent grows with you.',
+        icon: '◉',
+        frameText: 'Exploring depths',
     },
 ];
 
+function getFeatureOpacity(index: number, progress: number): number {
+    const featureCenter = (index + 0.5) / 3;
+    const distance = Math.abs(progress - featureCenter);
+    return Math.max(0, Math.min(1, 1 - distance * 4));
+}
+
 export const StickyFeatures = memo(({ c, isDark }: StickyFeaturesProps) => {
-    const [activeIndex, setActiveIndex] = useState(0);
+    const [progress, setProgress] = useState(0);
     const sectionRef = useRef<HTMLElement>(null);
 
     useEffect(() => {
@@ -50,55 +62,81 @@ export const StickyFeatures = memo(({ c, isDark }: StickyFeaturesProps) => {
             const viewportHeight = window.innerHeight;
             const scrollY = window.scrollY;
 
-            // Calculate how far we've scrolled into the section
             const scrolledIntoSection = scrollY - sectionTop;
-            // Total scrollable distance within the section
             const totalScroll = sectionHeight - viewportHeight;
 
-            // Progress from 0 to 1 as we scroll through the section
-            const progress = Math.max(0, Math.min(1, scrolledIntoSection / totalScroll));
-            const featureIndex = Math.min(features.length - 1, Math.floor(progress * features.length));
-
-            setActiveIndex(featureIndex);
+            const p = Math.max(0, Math.min(1, scrolledIntoSection / totalScroll));
+            setProgress(p);
         };
 
-        handleScroll(); // Call immediately on mount
+        handleScroll();
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
-
-    const feature = features[activeIndex];
 
     return (
         <section id="journey" className="sticky-features" ref={sectionRef}>
             <div className="sticky-container-simplified">
                 <CosmicOrb size={600} x={85} y={50} isDark={isDark} />
 
-                <div className="feature-content">
-                    <div className="feature-header">
-                        <span className="feature-number" style={{ color: c.solarFlare }}>{feature.number}</span>
-                    </div>
-                    <h2 className="feature-title" style={{ color: c.starlight }}>{feature.title}</h2>
-                    <p className="feature-description" style={{ color: c.moonlight }}>{feature.description}</p>
-                    <div className="feature-metric-card" style={{ backgroundColor: c.nebula, borderColor: c.border }}>
-                        <div className="metric-main">
-                            <span className="metric-number" style={{ color: c.starlight }}>{feature.metric}</span>
-                            <span className="metric-unit" style={{ color: c.solarFlare }}>{feature.metricUnit}</span>
-                        </div>
-                        <p className="metric-description" style={{ color: c.distant }}>{feature.metricLabel}</p>
-                    </div>
+                <div className="feature-content feature-content-wrapper">
+                    {features.map((feature, i) => {
+                        const opacity = getFeatureOpacity(i, progress);
+                        return (
+                            <div
+                                key={feature.number}
+                                className="feature-content-item"
+                                style={{
+                                    opacity,
+                                    pointerEvents: opacity > 0.5 ? 'auto' : 'none',
+                                }}
+                            >
+                                <div className="feature-header">
+                                    <span className="feature-number" style={{ color: c.solarFlare }}>{feature.number}</span>
+                                </div>
+                                <h2 className="feature-title" style={{ color: c.starlight }}>{feature.title}</h2>
+                                <p className="feature-description" style={{ color: c.moonlight }}>{feature.description}</p>
+                                <div className="feature-metric-card" style={{ backgroundColor: c.nebula, borderColor: c.border }}>
+                                    <div className="metric-main">
+                                        <span className="metric-number" style={{ color: c.starlight }}>{feature.metric}</span>
+                                        <span className="metric-unit" style={{ color: c.solarFlare }}>{feature.metricUnit}</span>
+                                    </div>
+                                    <p className="metric-description" style={{ color: c.distant }}>{feature.metricLabel}</p>
+                                </div>
+                            </div>
+                        );
+                    })}
                 </div>
 
                 <div className="feature-visual">
                     <div className="visual-frame" style={{ borderColor: c.border, backgroundColor: c.nebula }}>
                         <div className="frame-glow" style={{ backgroundColor: c.solarFlare }} />
-                        <div className="frame-content">
-                            <span className="frame-icon" style={{ color: c.solarFlare }}>
-                                {activeIndex === 0 ? '⚡' : activeIndex === 1 ? '✦' : '◉'}
-                            </span>
-                            <span className="frame-text" style={{ color: c.distant }}>
-                                {activeIndex === 0 ? 'Acceleration in progress' : activeIndex === 1 ? 'Capturing spark' : 'Exploring depths'}
-                            </span>
+                        <div className="frame-content" style={{ position: 'relative' }}>
+                            {features.map((feature, i) => {
+                                const opacity = getFeatureOpacity(i, progress);
+                                return (
+                                    <div
+                                        key={feature.number}
+                                        style={{
+                                            position: i === 0 ? 'relative' : 'absolute',
+                                            inset: 0,
+                                            opacity,
+                                            transition: 'opacity 0.15s ease',
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                        }}
+                                    >
+                                        <span className="frame-icon" style={{ color: c.solarFlare }}>
+                                            {feature.icon}
+                                        </span>
+                                        <span className="frame-text" style={{ color: c.distant }}>
+                                            {feature.frameText}
+                                        </span>
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
