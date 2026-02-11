@@ -8,12 +8,12 @@ interface LearningModesProps {
 }
 
 const modes = [
-    { id: 'video', label: 'Video-first', icon: '▶', description: 'Learn through curated video content and visual explanations.', imageAlt: 'Video learning interface' },
-    { id: 'slides', label: 'Slides-first', icon: '◧', description: 'Structured presentations for systematic learning.', imageAlt: 'Slide presentation view' },
-    { id: 'research', label: 'Deep research', icon: '◉', description: 'Long-form articles and academic papers.', imageAlt: 'Research documentation' },
-    { id: 'practice', label: 'Practice mode', icon: '◈', description: 'Interactive quizzes and problem solving.', imageAlt: 'Practice interface' },
-    { id: 'project', label: 'Project workspace', icon: '◫', description: 'Organized spaces for building.', imageAlt: 'Project workspace' },
-    { id: 'flow', label: 'Go with the flow', icon: '∿', description: 'Spontaneous exploration.', imageAlt: 'Free exploration' },
+    { id: 'video', label: 'Video-first', icon: '▶', description: 'Learn through curated video content and visual explanations.', imageAlt: 'Video learning interface', image: undefined as string | undefined },
+    { id: 'slides', label: 'Slides-first', icon: '◧', description: 'Structured presentations for systematic learning.', imageAlt: 'Slide presentation view', image: '/demos/slides.png' },
+    { id: 'research', label: 'Deep research', icon: '◉', description: 'Long-form articles and academic papers.', imageAlt: 'Research documentation', image: '/demos/deep-research.png' },
+    { id: 'practice', label: 'Practice mode', icon: '◈', description: 'Interactive quizzes and problem solving.', imageAlt: 'Practice interface', image: '/demos/practice.png' },
+    { id: 'project', label: 'Project workspace', icon: '◫', description: 'Organized spaces for building.', imageAlt: 'Project workspace', image: '/demos/project.png' },
+    { id: 'flow', label: 'Go with the flow', icon: '∿', description: 'Spontaneous exploration.', imageAlt: 'Free exploration', image: '/demos/flow.png' },
 ];
 
 export const LearningModes = memo(({ c, isDark }: LearningModesProps) => {
@@ -44,10 +44,14 @@ export const LearningModes = memo(({ c, isDark }: LearningModesProps) => {
                                 }}
                             >
                                 <div className="mode-image-placeholder" style={{ backgroundColor: isActive ? c.void : c.dust, borderColor: c.border }}>
-                                    <div className="placeholder-content">
-                                        <span className="placeholder-icon" style={{ color: isActive ? c.moonlight : c.distant }}>{mode.icon}</span>
-                                        <span className="placeholder-text" style={{ color: isActive ? c.distant : c.border }}>{mode.imageAlt}</span>
-                                    </div>
+                                    {mode.image ? (
+                                        <img src={mode.image} alt={mode.imageAlt} />
+                                    ) : (
+                                        <div className="placeholder-content">
+                                            <span className="placeholder-icon" style={{ color: isActive ? c.moonlight : c.distant }}>{mode.icon}</span>
+                                            <span className="placeholder-text" style={{ color: isActive ? c.distant : c.border }}>{mode.imageAlt}</span>
+                                        </div>
+                                    )}
                                     <div className="corner tl" style={{ borderColor: isActive ? c.distant : c.border }} />
                                     <div className="corner tr" style={{ borderColor: isActive ? c.distant : c.border }} />
                                     <div className="corner bl" style={{ borderColor: isActive ? c.distant : c.border }} />

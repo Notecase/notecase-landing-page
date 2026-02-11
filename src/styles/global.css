@@ -324,7 +324,7 @@ body {
 
 /* Sticky Features */
 .sticky-features {
-  height: 300vh;
+  height: 400vh;
   position: relative;
 }
 
@@ -421,7 +421,8 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  transition: opacity 0.15s ease;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  will-change: opacity, transform;
 }
 
 .feature-content-item:first-child {
@@ -502,8 +503,9 @@ body {
 }
 
 .visual-frame {
-  width: 300px;
-  height: 200px;
+  width: 100%;
+  max-height: 70vh;
+  aspect-ratio: 4/3;
   border-radius: 16px;
   border: 1px solid;
   position: relative;
@@ -513,6 +515,20 @@ body {
   align-items: center;
   justify-content: center;
   gap: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.visual-frame:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+}
+
+.visual-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
 }
 
 .frame-glow {
@@ -1081,6 +1097,13 @@ body {
   transition: all 0.3s;
 }
 
+.mode-image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
 .placeholder-content {
   display: flex;
   flex-direction: column;
@@ -1452,6 +1475,39 @@ body {
   font-size: 15px;
   line-height: 1.6;
   margin: 0;
+}
+
+/* Demo Image Modal */
+.demo-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+  animation: modalFadeIn 0.25s ease;
+  padding: 40px;
+}
+
+.demo-modal-overlay img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 16px;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
+  animation: modalScaleIn 0.25s ease;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalScaleIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
 /* Responsive */

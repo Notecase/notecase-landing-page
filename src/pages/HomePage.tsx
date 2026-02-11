@@ -21,7 +21,7 @@ export function HomePage() {
       <InteractiveDemo c={c} isDark={isDark} />
       <FeatureTriangle c={c} isDark={isDark} />
       <LearningModes c={c} isDark={isDark} />
-      <ComparisonTable />
+      <ComparisonTable c={c} isDark={isDark} />
       <Waitlist c={c} isDark={isDark} />
       <FinalCTA c={c} isDark={isDark} />
     </>
