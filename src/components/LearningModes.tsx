@@ -8,7 +8,7 @@ interface LearningModesProps {
 }
 
 const modes = [
-    { id: 'video', label: 'Video-first', icon: '▶', description: 'Learn through curated video content and visual explanations.', imageAlt: 'Video learning interface', image: undefined as string | undefined },
+    { id: 'video', label: 'Video-first', icon: '▶', description: 'Learn through curated video content and visual explanations.', imageAlt: 'Video learning interface', image: '/demos/video.png' },
     { id: 'slides', label: 'Slides-first', icon: '◧', description: 'Structured presentations for systematic learning.', imageAlt: 'Slide presentation view', image: '/demos/slides.png' },
     { id: 'research', label: 'Deep research', icon: '◉', description: 'Long-form articles and academic papers.', imageAlt: 'Research documentation', image: '/demos/deep-research.png' },
     { id: 'practice', label: 'Practice mode', icon: '◈', description: 'Interactive quizzes and problem solving.', imageAlt: 'Practice interface', image: '/demos/practice.png' },
