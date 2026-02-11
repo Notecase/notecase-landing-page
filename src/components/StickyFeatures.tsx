@@ -34,9 +34,21 @@ const features = [
     },
     {
         number: '03',
+        label: 'ORCHESTRATE',
+        title: 'An AI secretary that never lets you off track',
+        description: 'A daily planner that understands your goals, builds your schedule, and nudges you forward. It tracks active plans, maps your week, and ensures nothing falls through the cracks.',
+        metric: '24/7',
+        metricUnit: 'focus',
+        metricLabel: 'Your personal AI secretary, always watching your progress.',
+        icon: '◈',
+        frameText: 'Orchestrating your day',
+        image: '/demos/secretary.png',
+    },
+    {
+        number: '04',
         label: 'EXPLORE',
-        title: 'An agent companion beyond the obvious',
-        description: 'Dive into any concept and build a foundation from the roots—using deep research and synthesis across your sources and the entire web.',
+        title: 'An agent that helps you truly understand',
+        description: "Go beyond surface-level answers. This agent helps you grasp concepts deeply, revise what you've learned, and dive further into any topic\u2014powered by research and synthesis across your sources and the entire web.",
         metric: '∞',
         metricUnit: 'depth',
         metricLabel: 'No ceiling on how deep you can go. The agent grows with you.',
@@ -47,9 +59,10 @@ const features = [
 ];
 
 function getActiveIndex(progress: number): number {
-    if (progress < 0.33) return 0;
-    if (progress < 0.66) return 1;
-    return 2;
+    if (progress < 0.25) return 0;
+    if (progress < 0.50) return 1;
+    if (progress < 0.75) return 2;
+    return 3;
 }
 
 // Memoized content item to prevent unnecessary re-renders
