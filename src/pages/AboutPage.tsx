@@ -126,14 +126,16 @@ export function AboutPage() {
           </p>
           <div className="cta-buttons">
             <Link
-              to="/#waitlist"
+              to="https://docs.google.com/forms/d/e/1FAIpQLSfyEoHmFAXD0plWwSXWNrm6PYz4QYSThChYDGvr4k67cPlzKQ/viewform"
               className="btn-primary"
               style={{
                 backgroundColor: c.solarFlare,
                 color: isDark ? '#000' : '#fff',
               }}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Join waitlist <span className="btn-arrow">→</span>
+              Join the Waitlist <span className="btn-arrow">→</span>
             </Link>
             <Link
               to="/"

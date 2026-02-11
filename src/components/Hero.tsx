@@ -34,13 +34,13 @@ export const Hero = memo(({ c, isDark }: HeroProps) => (
             </p>
 
             <div className="hero-cta">
-                <button className="btn-primary" style={{ backgroundColor: c.solarFlare, color: c.void }}>
-                    <span>Begin your journey</span>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfyEoHmFAXD0plWwSXWNrm6PYz4QYSThChYDGvr4k67cPlzKQ/viewform" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ backgroundColor: c.solarFlare, color: c.void, textDecoration: 'none' }}>
+                    <span>Join the Waitlist</span>
                     <span className="btn-arrow">→</span>
-                </button>
-                <button className="btn-ghost" style={{ color: c.starlight, borderColor: c.border }}>
-                    Watch demo
-                </button>
+                </a>
+                <a href="https://app.noteshell.io/" target="_blank" rel="noopener noreferrer" className="btn-ghost" style={{ color: c.starlight, borderColor: c.border, textDecoration: 'none' }}>
+                    Try the Demo
+                </a>
             </div>
 
             <div className="hero-metrics">

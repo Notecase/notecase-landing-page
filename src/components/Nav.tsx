@@ -40,7 +40,7 @@ export const Nav = memo(({ theme, setTheme, c, isScrolled }: NavProps) => {
             <div className="nav-links">
                 <Link to="/about" style={{ color: c.moonlight }}>about</Link>
                 <a href="#journey" onClick={(e) => handleHashLink(e, 'journey')} style={{ color: c.moonlight }}>journey</a>
-                <a href="#demo" onClick={(e) => handleHashLink(e, 'demo')} style={{ color: c.moonlight }}>demo</a>
+                <a href="https://app.noteshell.io/" target="_blank" rel="noopener noreferrer" style={{ color: c.moonlight }}>demo</a>
                 <a href="#waitlist" onClick={(e) => handleHashLink(e, 'waitlist')} style={{ color: c.moonlight }}>waitlist</a>
 
                 <button

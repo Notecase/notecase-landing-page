@@ -20,7 +20,7 @@ export const Footer = memo(({ c }: FooterProps) => (
                 <a key={link} href="#" style={{ color: c.distant }}>{link}</a>
             ))}
         </div>
-        <div className="footer-copyright" style={{ color: c.distant }}>&copy; 2025 Noteshell</div>
+        <div className="footer-copyright" style={{ color: c.distant }}>&copy; 2026 Noteshell</div>
     </footer>
 ));
 

@@ -385,7 +385,9 @@ export function ComparisonTable({ c, isDark }: ComparisonTableProps) {
           <div className="ns-compareFootRight">
             <a
               className="ns-footCta"
-              href="#waitlist"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfyEoHmFAXD0plWwSXWNrm6PYz4QYSThChYDGvr4k67cPlzKQ/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 borderColor: ctaBorder,
                 background: ctaBg,

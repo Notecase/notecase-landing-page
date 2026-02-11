@@ -2,8 +2,7 @@ import { memo } from 'react';
 import type { ThemeColors } from '../types/theme';
 import { CosmicOrb } from './CosmicOrb';
 
-// TODO: Replace with Google Form URL
-const WAITLIST_FORM_URL = '#';
+const WAITLIST_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfyEoHmFAXD0plWwSXWNrm6PYz4QYSThChYDGvr4k67cPlzKQ/viewform';
 
 interface FinalCTAProps {
     c: ThemeColors;
@@ -27,9 +26,9 @@ export const FinalCTA = memo(({ c, isDark }: FinalCTAProps) => (
                     className="btn-primary large"
                     style={{ backgroundColor: c.solarFlare, color: c.void, textDecoration: 'none' }}
                 >
-                    Start your journey<span className="btn-arrow">→</span>
+                    Join the Waitlist<span className="btn-arrow">→</span>
                 </a>
-                <button className="btn-ghost" style={{ color: c.starlight, borderColor: c.border }}>Explore the docs</button>
+                <a href="https://app.noteshell.io/" target="_blank" rel="noopener noreferrer" className="btn-ghost" style={{ color: c.starlight, borderColor: c.border, textDecoration: 'none' }}>Try the Demo</a>
             </div>
         </div>
     </section>

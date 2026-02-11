@@ -179,7 +179,7 @@ export const InteractiveDemo = memo(({ c, isDark }: InteractiveDemoProps) => {
                             }}>
                                 <span className="url-lock" style={{ color: isDark ? '#86868b' : '#86868b' }}>🔒</span>
                                 <span className="url-text" style={{ color: isDark ? '#f5f5f7' : '#1d1d1f' }}>
-                                    app.noteshell.ai
+                                    app.noteshell.io
                                 </span>
                             </div>
                         </div>

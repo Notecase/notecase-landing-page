@@ -2,8 +2,7 @@ import { memo } from 'react';
 import type { ThemeColors } from '../types/theme';
 import { CosmicOrb } from './CosmicOrb';
 
-// TODO: Replace with Google Form URL
-const WAITLIST_FORM_URL = '#';
+const WAITLIST_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfyEoHmFAXD0plWwSXWNrm6PYz4QYSThChYDGvr4k67cPlzKQ/viewform';
 
 interface WaitlistProps {
     c: ThemeColors;
